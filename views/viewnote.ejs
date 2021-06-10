@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        margin-bottom: 80px;
+        }
+
+        li {
+        float: left;
+        font-size: 20px;
+        font-family: 'Work Sans', sans-serif;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #111;
+        }
+
+        .active {
+        background-color: #04AA6D;
+        
+        
+        }
+        .nav-text2{
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            float:right;
+            
+        }
+        .nav-text1{
+            background-color: #111;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        .content {
+        text-align:center;
+        margin:30px;
+        margin-top: 13%;
+        }
+        
+        .footer{
+            background-color: #04AA6D;
+            font-size: 20px;
+            width:100%;
+            color:white;
+            padding-right: 10px;
+            padding-left:90%;
+            bottom:0;
+            position: fixed ;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="nav-text1">VIEW NOTE</li>
+        <li><a href="/notes">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li class="nav-text2">Logged in as: <%=uname%></li>
+      </ul>
+    <div class="content">
+    <h2 style="font-family: 'Work Sans', sans-serif;"><%=result.title%></h2><br>
+    <hr><br>
+    <h4 style="font-family: 'Work Sans', sans-serif;"><%=result.body%></h4>
+    </div>
+    <div class="footer">madewithlove</div>
+</body>
+</html>

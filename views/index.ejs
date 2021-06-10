@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .content {
+        text-align:center;
+        margin-top: 15%;
+        }
+        .nav{
+            height:30%;
+            width:100%;
+            background-color: #04AA6D;
+            font-size: 30px;
+            padding-left: 10px;
+            font-family: 'Work Sans', sans-serif;
+            color:white;
+        }
+        .btn{
+        background-color:#04AA6D;
+        margin-top:5px;
+        font-size:20px;
+        border-radius: 4px;
+        padding: 4px 20px;
+        color:white;
+        }
+        .register{
+        text-decoration:none
+        }
+        input[type=text] {
+        width: 40%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        }
+        input[type=password] {
+        width: 40%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        }
+        .footer{
+            background-color: #04AA6D;
+            font-size: 20px;
+            width:100%;
+            color:white;
+            padding-right: 10px;
+            padding-left:90%;
+            bottom:0;
+            position: fixed ;
+        }
+    </style>
+</head>
+
+<body> 
+    <div class="nav">LOGIN FORM</div>
+    <div class="content">      
+   <form method="POST" action="/">
+        <% if (msg!=''){%>
+            <p style="color:red"><%=msg%></p>
+        <%}%>
+        <input type="text" id="uname" name="uname" placeholder="Enter username" required><br>
+        <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+        <button type="submit" class="btn">Login</button><br><br>
+        <div class="register"><a href="/register">Create new account</a></div>
+    </form>
+    </div>
+    <div class="footer">madewithlove</div>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        margin-bottom: 80px;
+        }
+
+        li {
+        float: left;
+        font-size: 20px;
+        font-family: 'Work Sans', sans-serif;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #111;
+        }
+
+        .active {
+        background-color: #04AA6D;
+        
+        
+        }
+        .nav-text2{
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            float:right;
+            
+        }
+        .nav-text1{
+            background-color: #111;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+        }
+        a.link:link{
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 8px;
+            font-size: 20px;
+        }
+        a.link:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        a.link:hover {
+        color: gray;
+        background-color: transparent;
+        text-decoration: none;
+        padding: 8px;
+        font-size: 35px;
+        }
+
+        a.link:active {
+        color: black;
+        background-color: transparent;
+        text-decoration:none;
+        padding: 8px;
+        font-size: 20px;
+        }
+        .message{
+            margin-top: 20%;
+            text-align: center;
+            font-size: 40px;
+        }
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: auto;
+            margin-top:3px;
+        }
+        th, td {
+        padding: 5px;
+        }
+        th {
+        text-align: left;
+        border: 1px solid black;
+        }
+        .footer{
+            background-color: #04AA6D;
+            font-size: 20px;
+            width:100%;
+            color:white;
+            padding-right: 10px;
+            padding-left:90%;
+            bottom:0;
+            position: fixed ;
+        }
+    </style>
+</head>
+
+<body> 
+    <ul>
+        <li class="nav-text1">YOUR NOTES</li>
+        <li><a href="/createnew">Add New Note</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li class="nav-text2">Logged in as: <%=uname%></li>
+      </ul>
+
+    <% if(records){
+        var c=0
+        records.forEach(function(row){ 
+            if(row.uname==uname){ 
+                c=1;%>  
+                <table>
+                    <tr>
+                      <td style="width:500px"><%= row.title %></td>
+                      <td><a href="/notes/delete/<%=row._id%>" class="link"><i class="fas fa-trash-alt"></i></a>     
+                        <a href="/notes/edit/<%=row._id%>" class="link"><i class="fas fa-edit"></i></a>                        
+                        <a href="/notes/view/<%=row._id%>" class="link"><i class="fas fa-book-reader"></i></a></td>
+                    </tr>
+                  </table>      
+    <% }
+    })
+    } %>
+    <% if(c==0){%>
+        <h2 class="message">No notes added by you</h2>
+    <%}%>
+    <div class="footer">madewithlove</div>
+</body>
+
+</html>
